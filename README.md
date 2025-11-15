@@ -46,10 +46,9 @@ Figma의 [Inspect] 탭에서 헤더에 필요한 CSS 속성들을 복사해와 s
 '조각' 완성 후 푸시(Push):
 '헤더' 하나가 대충 완성 되면, 터미널을 열고  다시 커밋과 푸시 하기(아래 방식 참고)
 
-Bash
- git add .
+ git add . 
  git commit -m "feat: 헤더 UI 구현”
-예시 : git push origin feature/base-html
+ git push origin feature/base-html`
 
 다음 '조각' 작업:
 헤더 PR이 승인(Merge)되면, 다시 main 브랜치로 돌아와 git pull upstream main으로 동기화
