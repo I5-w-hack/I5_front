@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 페이지</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1 class="logo">로고 / 이름</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search in site">
+            </div>
+    </header>
+
+    <main class="page-container">
+
+        <section class="profile-section">
+            <div class="profile-header">
+                <h2>프로필</h2>
+                <p>내 계정 정보를 확인하고 관리할 수 있습니다.</p>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-info">
+                    <div class="avatar"></div>
+                    <div class="user-details">
+                        <span class="username">Username</span>
+                        <span class="email">user@example.com</span>
+                    </div>
+                </div>
+                <button class="profile-edit-btn">프로필 수정</button>
+            </div>
+        </section>
+
+        <section class="activity-summary">
+            <h2>활동 요약</h2>
+            <div class="summary-cards">
+                <div class="card">
+                    <span class="card-title">저장한 단어 수</span>
+                    <span class="card-value">120</span>
+                </div>
+                <div class="card">
+                    <span class="card-title">저장한 문장 수</span>
+                    <span class="card-value">45</span>
+                </div>
+                <div class="card">
+                    <span class="card-title">최근 학습 기록</span>
+                    <span class="card-value">5/5 완료</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="vocabulary-section">
+            <h2>내 단어장</h2>
+            <a href="#" class="voca-link">
+                <span>단어장으로 이동</span>
+            </a>
+        </section>
+
+        <section class="settings-section">
+            <h2>설정</h2>
+            <div class="setting-item">
+             <img src="../image/gear.png" alt="계정 정보 관리"> ``미완성 예시``
+             <span>계정 정보 관리</span>
+            </div> 
+            <div class="setting-item">
+                <img src="../image/bellpng" alt="알림 설정"> 
+                <span>알림 설정</span>
+            </div>
+            <div class="setting-item">
+                <img src="../image/globe.png" alt="언어 설정"> 
+                <span>언어 설정</span>
+            </div>
+            <div class="setting-item">
+                <img src="../image/save.png" alt="저장 데이터 관리"> 
+                <span>저장 데이터 관리</span>
+            </div>
+                    </section>
+
+    </main>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html> 
