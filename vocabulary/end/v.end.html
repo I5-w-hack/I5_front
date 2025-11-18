@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 단어장</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/v.gend.css"> </head>
+<body>
+
+    <header class="site-header">
+        <h1 class="logo">어려운 단어 변환 서비스</h1>
+        <nav>
+            <a href="#">홈</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search in site">
+            <i class="fas fa-search"></i>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <section class="page-header">
+            <h2>내 단어장</h2>
+            <p>저장한 단어들을 확인하고 학습할 수 있습니다.</p>
+        </section>
+
+        <div class="view-controls">
+            <div class="sort-options">
+                <span>정렬 옵션</span>
+                <button class="sort-btn active">최근 저장순</button>
+                <button class="sort-btn">가나다순</button>
+                <button class="sort-btn">많이 조회한 순</button>
+            </div>
+            <button class="view-toggle-btn">플래시 카드로 보기</button>
+        </div>
+
+        <section class="card-grid">
+            
+            <article class="word-card">
+                <div class="card-image-placeholder"></div>
+                <div class="card-content">
+                    <h3>사과</h3>
+                    <span class="card-subtitle">상세 뜻</span>
+                    <p>사과는 맛있고 건강한 과일입니다. 그것은 많은 비타민을 포함하고 있습니다.</p>
+                    <div class="card-tags">
+                        <span class="tag-label">명사</span>
+                        <span class="tag-label">사용자</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>--</span>
+                        <span>--</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="word-card">
+                <div class="card-image-placeholder"></div>
+                <div class="card-content">
+                    <h3>사과</h3>
+                    <span class="card-subtitle">상세 뜻</span>
+                    <p>사과는 맛있고 건강한 과일입니다. 그것은 많은 비타민을 포함하고 있습니다.</p>
+                    <div class="card-tags">
+                        <span class="tag-label">명사</span>
+                        <span class="tag-label">사용자</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>--</span>
+                        <span>--</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="word-card">
+                <div class="card-image-placeholder"></div>
+                <div class="card-content">
+                    <h3>사과</h3>
+                    <span class="card-subtitle">상세 뜻</span>
+                    <p>사과는 맛있고 건강한 과일입니다. 그것은 많은 비타민을 포함하고 있습니다.</p>
+                    <div class="card-tags">
+                        <span class="tag-label">명사</span>
+                        <span class="tag-label">사용자</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>--</span>
+                        <span>--</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="word-card">
+                <div class="card-image-placeholder"></div>
+                <div class="card-content">
+                    <h3>사과</h3>
+                    <span class="card-subtitle">상세 뜻</span>
+                    <p>사과는 맛있고 건강한 과일입니다. 그것은 많은 비타민을 포함하고 있습니다.</p>
+                    <div class="card-tags">
+                        <span class="tag-label">명사</span>
+                        <span class="tag-label">사용자</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>--</span>
+                        <span>--</span>
+                    </div>
+                </div>
+            </article>
+
+        </section> 
+    
+    </main> <div class="modal-overlay hidden" id="flashcard-modal">
+        
+        <button class="modal-close-btn" id="close-modal-btn">&times;</button>
+        
+        <div class="flashcard-container" id="flashcard-container">
+            
+            <div class="flashcard-front">
+                <div class="card-word">
+                    단어
+                </div>
+            </div>
+
+            <div class="flashcard-back">
+                <div class="card-definition">
+                    <h3>사과</h3>
+                    <span class="card-subtitle">상세 뜻</span>
+                    <p>사과는 맛있고 건강한 과일입니다. 그것은 많은 비타민을 포함하고 있습니다.</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <button class="modal-flip-btn" id="flip-btn">의미보기 | SPACE</button>
+    </div>
+
+    <script src="../js/v.gend.js"></script>
+
+</body>
+</html>
