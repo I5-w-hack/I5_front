@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 퀴즈</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <header class="quiz-header">
+            <button class="close-btn" aria-label="닫기">&times;</button>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div> 
+            </div>
+            <span class="timer">3:00</span>
+        </header>
+
+        <section class="word-section">
+            <h1 class="current-word">단어</h1>
+        </section>
+
+        <section class="options-section">
+            <button class="option-btn" data-answer="1">단어 뜻</button>
+            <button class="option-btn" data-answer="2">단어 뜻</button>
+            <button class="option-btn" data-answer="3">단어 뜻</button>
+            <button class="option-btn" data-answer="4">단어 뜻</button>
+        </section>
+
+        <button class="next-btn">다음 문제</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

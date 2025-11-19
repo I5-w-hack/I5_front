@@ -13,15 +13,12 @@ body {
 }
 
 .inbox{
-      border:1px solid none;
       width:575px;
       height: 800px;
-      margin: 112px auto;
       border-radius: 25px;
-      margin-left:433px;
-      margin-right: 433px;
       box-shadow: 0 0 3px #4E4E4E;
       max-width:1440px;
+      over-flow: hidden;
 }
 
 .border{
@@ -43,10 +40,12 @@ body {
     padding: 40px;
     background-color: #FFFFFF;
     box-sizing: border-box;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
     
 
-h2 { 
+.signup-box h2 { 
     color: #62C370;
     font-size: 48px;
     font-weight: bold;

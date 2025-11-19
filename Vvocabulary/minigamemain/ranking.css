@@ -1,0 +1,214 @@
+/* 기본 리셋 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 폰트 설정 */
+    background-color: #FFFFFF; /* 전체 배경색 */
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px 14px;
+    border-bottom: 1px solid #000000;
+    background-color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-link {
+    font-size: 16px;
+    color: #000000;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #FFFFFF;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    color: #777;
+}
+
+/* Main Content */
+.container {
+    max-width: 1440px;
+    margin: 40px auto;
+    padding: 0 50px;
+    text-align: center;
+}
+
+/* Title Section */
+.title-section {
+    margin-bottom: 40px;
+}
+
+.title-section h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title-section p {
+    color: #000000;
+    font-size: 1.1em;
+}
+
+/* Game Selection */
+.game-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width:958px;
+    margin-left:auto;
+    margin-right:auto;
+  
+  
+}
+
+.game-card {
+    flex: 1;
+   
+    background-color: #62C370; /* 연두색 계열 */
+    color: #fff;
+    padding: 70px 30px;
+    border-radius: 70px;
+    text-align: center;
+    transition: transform 0.2s;
+    display: block; /* a 태그를 블록 요소로 만듦 */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-placeholder {
+    font-size: 3em;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 1;
+}
+
+.game-card h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.game-card p {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Ranking Link */
+.ranking-link {
+    display: flex;
+    justify-content: center;
+}
+
+.ranking-button {
+    width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background-color: #F5F5F5;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #333;
+    transition: box-shadow 0.2s;
+}
+
+.ranking-button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.button-icon-placeholder {
+    font-size: 1.5em;
+    
+    margin-right: 15px;
+    color: #f7b731; /* 트로피 색상 */
+}
+
+.ranking-button span:first-of-type {
+    /* 랭킹 보러가기 텍스트 */
+    flex-grow: 1; 
+    text-align: left;
+}
+
+.arrow-icon {
+    font-size: 1.5em;
+    color: #aaa;
+}
+
+/* 모바일 화면을 위한 간단한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .search-area {
+        gap: 10px;
+    }
+    .game-selection {
+        flex-direction: column;
+        align-items: center;
+    }
+    .game-card {
+        width: 90%;
+        max-width: none;
+    }
+    .ranking-button {
+        width: 90%;
+    }
+}

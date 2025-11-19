@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 학습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="close-btn" id="closeBtn">✕</button>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="timer" id="timer">3:00</div>
+        </header>
+
+        <main>
+            <h1 class="word-title" id="wordTitle">단어</h1>
+            
+            <div class="input-container">
+                <textarea 
+                    id="answerInput" 
+                    placeholder="단어의 뜻을 설명을 입력해주세요."
+                    rows="6"
+                ></textarea>
+            </div>
+
+            <button class="next-btn" id="nextBtn">다음 문제</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

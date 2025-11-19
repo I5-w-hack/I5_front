@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 결과</title>
+    <link rel="stylesheet" href="result-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="close-btn" id="closeBtn">✕</button>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="timer" id="timer">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px;">
+                    <circle cx="8" cy="8" r="7" stroke="#000000" stroke-width="2" fill="none"/>
+                    <path d="M8 4V8L11 11" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>00:00</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="result-card">
+                <div class="trophy-icon">
+                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_177_2266)">
+                            <path d="M28.125 1.5H12.375C10.5117 1.5 8.99297 3.03281 9.06328 4.88906C9.07734 5.26172 9.09141 5.63438 9.1125 6H1.6875C0.752344 6 0 6.75234 0 7.6875C0 14.1984 2.35547 18.7266 5.51953 21.7992C8.63437 24.8297 12.4313 26.3555 15.2297 27.1289C16.875 27.5859 18 28.957 18 30.3352C18 31.8047 16.8047 33 15.3352 33H13.5C12.2555 33 11.25 34.0055 11.25 35.25C11.25 36.4945 12.2555 37.5 13.5 37.5H27C28.2445 37.5 29.25 36.4945 29.25 35.25C29.25 34.0055 28.2445 33 27 33H25.1648C23.6953 33 22.5 31.8047 22.5 30.3352C22.5 28.957 23.618 27.5789 25.2703 27.1289C28.0758 26.3555 31.8727 24.8297 34.9875 21.7992C38.1445 18.7266 40.5 14.1984 40.5 7.6875C40.5 6.75234 39.7477 6 38.8125 6H31.3875C31.4086 5.63438 31.4227 5.26875 31.4367 4.88906C31.507 3.03281 29.9883 1.5 28.125 1.5ZM3.43828 9.375H9.37266C10.0125 15.7102 11.4258 19.943 13.0219 22.7766C11.2711 22.0031 9.45 20.9133 7.875 19.3805C5.625 17.1938 3.79688 14.0367 3.44531 9.375H3.43828ZM32.632 19.3805C31.057 20.9133 29.2359 22.0031 27.4852 22.7766C29.0812 19.943 30.4945 15.7102 31.1344 9.375H37.0688C36.7102 14.0367 34.882 17.1938 32.6391 19.3805H32.632Z" fill="#FFFFFF"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_177_2266">
+                                <path d="M0 1.5H40.5V37.5H0V1.5Z" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                
+                <p class="result-label">점수</p>
+                
+                <div class="score-display">
+                    <span id="scoreNumber">80</span><span class="score-unit">점</span>
+                </div>
+                
+                <button class="retry-btn" id="retryBtn">다시 도전하기</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="result-script.js"></script>
+</body>
+</html>

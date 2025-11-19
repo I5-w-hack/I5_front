@@ -1,0 +1,172 @@
+/* 기본 리셋 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* 메인 컨테이너 */
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* --- 1. 상단 헤더 및 진행 표시줄 --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 791px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    padding: 0;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #ff0000;
+    border-radius: 5px;
+    transition: width 0.3s;
+    width: 100%;
+}
+
+.timer {
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- 2. 문제 단어 영역 --- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.word-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* --- 3. 입력 영역 --- */
+.input-container {
+    max-width: 791px;
+    width: 100%;
+    margin-top:80px;
+    margin-bottom: 50px;
+}
+
+#answerInput {
+    width: 100%;
+    min-height: 172px;
+    background-color: #FFFFFF;
+    border: 1px solid #4E4E4E4D;
+    border-radius: 24px;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+    resize: vertical;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#answerInput:focus {
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#answerInput::placeholder {
+    color: #999;
+}
+
+/* --- 4. 다음 문제 버튼 --- */
+.next-btn {
+    width: 386px;
+    height: 88px;
+    max-width: 400px;
+    padding: 15px 0;
+    background-color: #62C370;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.next-btn:hover {
+    background-color: #5ab13c;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 850px) {
+    header {
+        width: 100%;
+    }
+    
+    .word-title {
+        font-size: 48px;
+    }
+    
+    .input-container {
+        max-width: 100%;
+    }
+    
+    .next-btn {
+        width: 90%;
+        max-width: 386px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 30px;
+    }
+    
+    .word-title {
+        font-size: 36px;
+    }
+    
+    #answerInput {
+        font-size: 18px;
+        min-height: 120px;
+    }
+    
+    .next-btn {
+        font-size: 24px;
+        height: 70px;
+    }
+}
