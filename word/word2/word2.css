@@ -24,10 +24,9 @@ body {
 }
 
 .header-content-container {
-    /* [수정] 로고를 맨 왼쪽으로 보내기 위해 너비 제한 해제 */
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0;
-    padding: 0 20px; /* 화면 끝에 너무 딱 붙지 않게 최소 여백 */
+    padding: 0 20px;
 }
 
 .header {
@@ -83,50 +82,52 @@ body {
 
 /* Main Content Layout */
 .main-content {
-    /* 카드들이 화면 중앙에 오도록 적절한 너비 유지 */
-    max-width: 1280px; 
+    max-width: 1280px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
-/* Tabs (Pill Shape) */
+
 .search-tabs {
     display: flex;
-    /* [수정] 버튼 사이 간격 제거하여 이어지게 함 */
-    gap: 0; 
-    margin-bottom: 40px;
+    gap: 12px; 
     justify-content: center;
+    margin-bottom: 40px; 
 }
 
 .tab-btn {
-    padding: 10px 30px;
-    border: 1px solid #ddd;
+    
+    padding: 10px 32px;    
+    font-size: 15px;       
+    border-radius: 20px;   
+    border: 1px solid #d2d2d7; 
     background-color: #fff;
+    font-weight: 500; 
+    color: #1d1d1f; 
     cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
-    transition: all 0.3s;
-    width: 150px;
-    /* 그림자 문법 수정 */
-    box-shadow: 2px 2px 5px rgba(221, 221, 221, 0.5); 
+    transition: all 0.2s;
+    
 }
 
-.tab-btn:first-child {
-    border-radius: 30px 0 0 30px;
-    border-right: none;
+/* 호버 스타일 */
+.tab-btn:hover {
+    background-color: #f5f5f7;
 }
 
+/* 첫 번째/마지막 버튼 둥글기 일관성 유지 */
+.tab-btn:first-child,
 .tab-btn:last-child {
-    border-radius: 0 30px 30px 0;
-    border-left: none;
+    border-radius: 25px; /* 둥근 정도 조정 */
+    border: 1px solid #d2d2d7; 
 }
+
 
 .tab-btn.active {
-    border: 2px solid #4caf50;
-    color: #000;
-    position: relative;
-    z-index: 1;
+    /* 활성화 스타일 유지 */
+    background-color: #e8f5e9; 
+    border-color: #4caf50; 
+    color: #2e7d32; 
+    font-weight: 500;
 }
 
 /* Search Area Text */
@@ -150,8 +151,7 @@ body {
 
 /* Main Input (중앙 검색창) */
 .main-search-input-wrapper {
-    /* [수정] 검색창 너비를 360px로 줄임 */
-    max-width: 360px; 
+    max-width: 360px;
     height: 45px;
     margin: 0 auto;
     position: relative;
@@ -160,7 +160,7 @@ body {
 .main-search-input-wrapper input {
     width: 100%;
     height: 100%;
-    padding: 15px 15px 15px 40px; 
+    padding: 15px 15px 15px 40px;
     border: 1px solid #888;
     border-radius: 6px;
     font-size: 16px;
@@ -180,16 +180,15 @@ body {
 }
 
 /* =========================================
-   Result Grid Layout (핵심 수정 부분)
-   ========================================= */
+    Result Grid Layout
+    ========================================= */
 .result-grid {
     display: grid;
-    grid-template-columns: 393px 393px; 
-    
-    /* [수정] 카드를 다시 중앙으로 모으고(center), 간격을 좁힘(20px) */
-    justify-content: center; 
-    gap: 250px; 
-    
+    grid-template-columns: 393px 393px;
+
+    justify-content: center;
+    gap: 250px;
+
     align-items: start;
 }
 
@@ -275,7 +274,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) { 
+@media (max-width: 900px) {
     .header {
         flex-direction: column;
         gap: 15px;
@@ -287,13 +286,13 @@ body {
     }
 
     .result-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         justify-content: center;
         gap: 30px;
     }
-    
+
     .main-card, .sub-card {
-        width: 100%; 
+        width: 100%;
         height: auto;
     }
 }
