@@ -1,3 +1,4 @@
+/* 기본 원래 스타일 (그대로 유지) */
 * {
     margin: 0;
     padding: 0;
@@ -25,12 +26,8 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1d1d1f;
+    gap:12px;
+    margin-top:20px;
 }
 
 .search-area {
@@ -38,6 +35,14 @@ body {
     align-items: center;
     gap: 20px;
 }
+
+/* === 홈 글씨체 변경을 위한 추가 스타일 === */
+.home-text {
+    font-weight: normal; /* '홈' 텍스트를 일반 굵기로 변경 */
+    color: #1d1d1f; /* 색상 유지 */
+}
+/* ================================== */
+
 
 .notification-icon {
     font-size: 20px;
@@ -80,12 +85,14 @@ body {
 }
 
 /* Main Content */
+.app-container{
+    background-color:#ffffff;
+}
 .main-content {
+    background-color:#ffffff;
     max-width: 580px;
     margin: 0 auto;
     padding: 32px 20px;
-  
-  
 }
 
 /* Translation Filter */
@@ -113,12 +120,14 @@ body {
 }
 
 .filter-btn.active {
-    background-color: #1d1d1f;
-    color: #ffffff;
-    border-color: #1d1d1f;
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32;
+    font-weight: 500;
 }
 
-/* input Section  */
+
+/* Upload Section */
 .upload-section {
     background-color: #ffffff;
     border-radius: 16px;
@@ -132,6 +141,9 @@ body {
     font-weight: 700;
     color: #1d1d1f;
     margin-bottom: 12px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
 }
 
 .guide-text {
@@ -231,10 +243,15 @@ body {
     }
 }
 
+/* 오버라이드된 스타일 (코드 하단에 있던 내용) */
 .upload-section {
     width: 700px;
     padding: 70px 60px;
     border-radius: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .section-title {
@@ -261,10 +278,4 @@ body {
     padding: 12px 36px;
     font-size: 16px;
     border-radius: 22px;
-}
-.upload-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
