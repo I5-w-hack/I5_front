@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랭킹 페이지</title>
+    <link rel="stylesheet" href="minigame-ranking.css">
+    
+</head>
+<body>
+    <div class="ranking-container">
+        <header class="top-header">
+            <h1 class="logo">로고</h1>
+            <div class="search-area">
+                <i class="fas fa-bell notification-icon"></i>
+                <div class="search-box">
+                    <input type="text" placeholder="검색하세요." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="ranking-title-area">
+            <h2 class="ranking-title">랭킹</h2>
+            <p class="filter-label">필터</p>
+        </div>
+
+        <div class="filter-buttons">
+            <div class="filter-btn" data-filter="today">
+                <i class="fas fa-calendar-day icon"></i>
+                <span>오늘</span>
+            </div>
+            <div class="filter-btn active" data-filter="this-week">
+                <i class="fas fa-calendar-week icon"></i>
+                <span>이번 주</span>
+            </div>
+            <div class="filter-btn" data-filter="all-time">
+                <i class="fas fa-infinity icon"></i>
+                <span>전체</span>
+            </div>
+        </div>
+
+        <div class="ranking-list" id="ranking-list">
+            </div>
+    </div>
+
+    <script src="minigame-ranking.js"></script>
+</body>
+</html>

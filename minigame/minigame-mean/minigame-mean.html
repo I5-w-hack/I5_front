@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 퀴즈</title>
+    <link rel="stylesheet" href="minigame-mean.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-box">
+            <div class="header">
+                <button class="close-btn">✕</button>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="timer-container">
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <span class="time-label" id="timelabel">1:29</span>
+            </div>
+            <h1 class="title">단어</h1>
+            
+            <div class="options-container">
+                <button class="option-btn" data-option="1">단어 뜻</button>
+                <button class="option-btn" data-option="2">단어 뜻</button>
+                <button class="option-btn" data-option="3">단어 뜻</button>
+                <button class="option-btn" data-option="4">단어 뜻</button>
+            </div>
+            
+            <button class="submit-btn">다음 문제</button>
+        </div>
+    </div>
+    
+    <script src="minigame-mean.js"></script>
+</body>
+</html>

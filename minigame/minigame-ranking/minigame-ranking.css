@@ -1,0 +1,199 @@
+/* 기본 스타일 */
+body {
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 메인 컨테이너 (화면 중앙의 흰색 영역) */
+.ranking-container {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 상단 헤더 --- */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    font-size: 18px;
+    color: #888;
+    margin-right: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    width: 120px;
+}
+
+.search-icon {
+    color: #aaa;
+    margin-left: 5px;
+}
+
+/* --- 랭킹 제목 및 필터 라벨 --- */
+.ranking-title-area {
+    margin-bottom: 30px;
+}
+
+.ranking-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.filter-label {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* --- 필터 버튼 --- */
+.filter-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #eee;
+}
+
+.filter-btn .icon {
+    font-size: 28px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.filter-btn span {
+    font-size: 14px;
+    color: #777;
+    font-weight: 600;
+}
+
+/* 활성화된 버튼 스타일 */
+.filter-btn.active {
+    background-color: #e6f7e0;
+    border-color: #52c41a;
+   
+}
+.filter-buttons{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+    width:100%;
+}
+.filter-btn.active .icon {
+    color: #52c41a;
+    
+}
+
+.filter-btn.active span {
+    color: #52c41a;
+}
+
+/* --- 랭킹 목록 --- */
+.ranking-list {
+    padding: 0 10px; /* 좌우 여백 추가 */
+}
+.ranking-title{
+    text-align: center;
+}
+.filter-label{
+    text-align:center;
+}
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.rank-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.date {
+    font-size: 12px;
+    color: #999;
+}
+
+.score {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
