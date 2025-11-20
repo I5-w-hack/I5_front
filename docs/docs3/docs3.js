@@ -21,7 +21,7 @@ const sidebar = document.getElementById("sidebar");
 const wordList = document.getElementById("word-list");
 const closeBtn = document.getElementById("closePanel");
 // 초록색/회색 요소들 (번역 문장)
-const lineBoxes = document.querySelectorAll(".line-box"); 
+
 
 // 단어 설명 데이터베이스
 const dictionary = {
@@ -87,16 +87,6 @@ function addWordToSidebar(word) {
     wordList.prepend(item);
 }
 
-/* -------------------------
-   초록색/회색 박스(line-box) 표시/숨김 함수
-------------------------- */
-function showTranslationBoxes(shouldShow) {
-    lineBoxes.forEach(box => {
-        // 단어 선택 시 보이게, 사이드바 닫을 때 숨김
-        box.style.opacity = shouldShow ? '1' : '0'; 
-        box.style.visibility = shouldShow ? 'visible' : 'hidden';
-    });
-}
 
 
 /* -------------------------
@@ -142,3 +132,4 @@ if (closeBtn && sidebar) {
 
 // 초기 상태: 초록색/회색 박스를 숨깁니다.
 showTranslationBoxes(false);
+
