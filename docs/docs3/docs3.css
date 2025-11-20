@@ -195,18 +195,6 @@ body {
     color: #555;
 }
 
-.line-box {
-    width: 90%;
-    height: 14px;
-    background: #4caf50;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    
-    /* ⭐ 초기 상태 숨김 및 애니메이션을 위한 설정 */
-    opacity: 0; 
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
 
 /* --- 사이드바 단어 item --- */
 .word-item {
@@ -273,3 +261,4 @@ body {
     cursor: pointer;
     color: #777;
 }
+
