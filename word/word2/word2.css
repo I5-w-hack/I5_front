@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     color: #333;
 }
 
@@ -19,35 +19,22 @@ body {
 /* Header Styles */
 #header {
     background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #eee;
     padding: 15px 0;
 }
 
 .header-content-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    /* [수정] 로고를 맨 왼쪽으로 보내기 위해 너비 제한 해제 */
+    max-width: 100%; 
+    margin: 0;
+    padding: 0 20px; /* 화면 끝에 너무 딱 붙지 않게 최소 여백 */
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.header h1 a {
-    text-decoration: none;
-    color: #333;
-}
-
-.header h1 img {
-    height: 30px;
-    vertical-align: middle;
+    width: 100%;
 }
 
 .nav {
@@ -59,31 +46,27 @@ body {
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
 }
 
 .nav ul li a {
     text-decoration: none;
-    color: #666;
-    font-size: 14px;
-}
-
-.nav ul li a:hover {
     color: #333;
+    font-weight: bold;
+    font-size: 15px;
 }
 
+/* 헤더 우측 검색창 */
 .search-box {
     display: flex;
     align-items: center;
     border: 1px solid #ddd;
-    border-radius: 20px;
+    border-radius: 6px;
     padding: 5px 15px;
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
 }
 
 .search-box input {
     border: none;
-    background: transparent;
     outline: none;
     padding: 5px;
     font-size: 14px;
@@ -98,17 +81,19 @@ body {
     cursor: pointer;
 }
 
-/* Main Content */
-.main-search-content {
-    max-width: 1200px;
-    margin: 40px auto;
+/* Main Content Layout */
+.main-content {
+    /* 카드들이 화면 중앙에 오도록 적절한 너비 유지 */
+    max-width: 1280px; 
+    margin: 60px auto;
     padding: 0 20px;
 }
 
-/* Tabs */
+/* Tabs (Pill Shape) */
 .search-tabs {
     display: flex;
-    gap: 10px;
+    /* [수정] 버튼 사이 간격 제거하여 이어지게 함 */
+    gap: 0; 
     margin-bottom: 40px;
     justify-content: center;
 }
@@ -117,231 +102,198 @@ body {
     padding: 10px 30px;
     border: 1px solid #ddd;
     background-color: #fff;
-    border-radius: 25px;
     cursor: pointer;
     font-size: 15px;
-    color: #666;
+    font-weight: 600;
+    color: #333;
     transition: all 0.3s;
+    width: 150px;
+    /* 그림자 문법 수정 */
+    box-shadow: 2px 2px 5px rgba(221, 221, 221, 0.5); 
 }
 
-.tab-btn:hover {
-    background-color: #f5f5f5;
+.tab-btn:first-child {
+    border-radius: 30px 0 0 30px;
+    border-right: none;
+}
+
+.tab-btn:last-child {
+    border-radius: 0 30px 30px 0;
+    border-left: none;
 }
 
 .tab-btn.active {
-    background-color: #e8f5e9;
-    border-color: #4caf50;
-    color: #2e7d32;
-    font-weight: 500;
+    border: 2px solid #4caf50;
+    color: #000;
+    position: relative;
+    z-index: 1;
 }
 
-/* Search Area */
+/* Search Area Text */
 .search-area {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 80px 40px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
 }
 
-.search-word-tabs h2 {
-    font-size: 32px;
+.search-header-text h2 {
+    font-size: 42px;
     margin-bottom: 15px;
-    color: #333;
-    font-weight: 600;
+    color: #000;
+    font-weight: 700;
 }
 
-.search-word-tabs p {
-    font-size: 15px;
-    color: #666;
+.search-header-text p {
+    font-size: 16px;
+    color: #333;
     margin-bottom: 40px;
 }
 
-.mian-search-input-wrapper {
-    max-width: 500px;
+/* Main Input (중앙 검색창) */
+.main-search-input-wrapper {
+    /* [수정] 검색창 너비를 360px로 줄임 */
+    max-width: 360px; 
+    height: 45px;
     margin: 0 auto;
     position: relative;
 }
 
-.mian-search-input-wrapper input {
+.main-search-input-wrapper input {
     width: 100%;
-    padding: 16px 50px 16px 45px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
+    height: 100%;
+    padding: 15px 15px 15px 40px; 
+    border: 1px solid #888;
+    border-radius: 6px;
+    font-size: 16px;
     outline: none;
-    transition: border-color 0.3s;
+    color: #333;
 }
 
-.mian-search-input-wrapper input:focus {
-    border-color: #4caf50;
-}
-
-.mian-search-input-wrapper::before {
-    content: '';
+.main-search-input-wrapper .search-icon {
     position: absolute;
-    left: 15px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="%23999" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center;
+    margin-top: 2px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
 }
 
-/* Result View Styles (오른쪽 화면) */
-.result-container {
-    display: none;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+/* =========================================
+   Result Grid Layout (핵심 수정 부분)
+   ========================================= */
+.result-grid {
+    display: grid;
+    grid-template-columns: 393px 393px; 
+    
+    /* [수정] 카드를 다시 중앙으로 모으고(center), 간격을 좁힘(20px) */
+    justify-content: center; 
+    gap: 250px; 
+    
+    align-items: start;
 }
 
-.result-container.active {
-    display: block;
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.result-header {
+/* Card Common Styles */
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.main-card {
+    width: 393px;
+    height: 261px;
+    position: relative;
+}
+
+.sub-card {
+    width: 393px;
+    height: 162px;
+}
+
+.card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.result-word-info h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
-    font-weight: 600;
+.card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
 }
 
-.word-badge {
-    display: inline-block;
-    background-color: #e3f2fd;
-    color: #1976d2;
-    padding: 5px 14px;
-    border-radius: 15px;
-    font-size: 13px;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.word-definition {
-    color: #666;
-    line-height: 1.8;
-    font-size: 15px;
-}
-
-.result-sidebar {
-    text-align: right;
-    min-width: 150px;
-}
-
-.result-sidebar h4 {
+.sub-title {
     font-size: 16px;
-    margin-bottom: 12px;
+    color: #4E4E4E;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0e0e0;
     color: #333;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
     font-weight: 600;
-}
-
-.result-sidebar ul {
-    list-style: none;
-    color: #666;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.section-box {
-    background-color: #fafafa;
-    border-radius: 10px;
-    padding: 25px;
     margin-bottom: 20px;
 }
 
-.section-box h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #333;
-    font-weight: 600;
-}
-
-.section-box p {
-    color: #666;
+.description {
+    font-size: 16px;
     line-height: 1.8;
-    font-size: 15px;
+    color: #000000;
 }
 
-.action-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.btn {
-    flex: 1;
-    padding: 16px;
-    border-radius: 8px;
+.bookmark-btn {
+    background: none;
     border: none;
-    font-size: 15px;
     cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 500;
+    padding: 0;
 }
 
-.btn-secondary {
-    background-color: #f5f5f5;
-    color: #333;
-    border: 1px solid #e0e0e0;
+.simple-desc {
+    font-size: 16px;
+    color: #000000;
 }
 
-.btn-secondary:hover {
-    background-color: #e8e8e8;
-}
-
-.btn-primary {
-    background-color: #4caf50;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #45a049;
+.alternatives {
+    margin-top: 20px;
+    font-size: 16px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) { 
     .header {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .nav {
-        flex-direction: column;
-        gap: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr; 
+        justify-content: center;
+        gap: 30px;
     }
     
-    .search-area {
-        padding: 40px 20px;
-    }
-    
-    .search-word-tabs h2 {
-        font-size: 24px;
-    }
-    
-    .result-container {
-        padding: 25px;
-    }
-    
-    .result-header {
-        flex-direction: column;
-    }
-    
-    .result-sidebar {
-        text-align: left;
-        margin-top: 20px;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
+    .main-card, .sub-card {
+        width: 100%; 
+        height: auto;
     }
 }
