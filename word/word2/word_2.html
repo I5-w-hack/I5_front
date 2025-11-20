@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+    <title>단어 문장/변환</title>
+    <link rel="stylesheet" href="word2.css"> </head>
+</head>
+<body>
+    <script src="word2.js"></script>
+     <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="header clearfix">
+                    <h1>
+                        <a href="#">
+                            <em><img src="assets/img/logo.png" alt="로고"></em>
+                        </a>    
+                    </h1>
+                    <nav class="nav">
+                        <ul class="clearfix">
+                            <li><a href="#">홈</a></li>
+                        </ul>
+                        <div class="search-box">
+                            <input type="text" placeholder="검색하세요">
+                            <button class="search-btn" aria-label;="검색"></button>
+                        </div>
+                    </nav>    
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <nav class="main-search-content">
+            <button class="tab-btn active">단어</button>
+            <button class="tab-btn">문서</button>
+        </nav>
+        <section class="search-area">
+            <nav class="search-word-tabs">
+                <h2>단어 검색</h2>
+                <p>어려운 단어를 입력하면 쉬운 해설과 대체 표현을 제공합니다.</p>
+            </nav>
+        <div class="mian-search-input-wrapper">
+            <input type="text" placeholder="입력된 단어">
+        </div>
+        </section>
+        <article class="result-area" id="panel-word" role="tabpaanel" aria-labelledby="tab-word">
+            <article class="result-row clearfix">
+                <article class="result-card left-card">
+                    <h3 class="card-title">단어</h3>
+                    <p class="card-props-1">상세 뜻</p>
+                    <p clas="card-props-2">품사</p>
+                    <div class="explanation">
+                        <p>설명 ------------------</p>
+                        <P>------------------</P>
+                    </div>
+                </article>
+            </article>
+        </article>
+        <article class="result-area" id="panel-word" role="tabpaanel" aria-labelledby="tab-word">
+            <article class="result-row clearfix">
+                <article class="result-card left-card">
+                    <h3 class="card-title">단어</h3>
+                    <p class="card-props-1">상세 뜻</p>
+                    <p clas="card-props-2">쉬운 설명</p>
+                </article>
+            </article>
+        </article>
+        <article class="result-area" id="panel-word" role="tabpaanel" aria-labelledby="tab-word">
+            <article class="result-row clearfix">
+                <article class="result-card left-card">
+                    <h3 class="card-title">대체 표현</h3>
+                    <p class="card-props-1">대체 표현~~~~</p>
+                </article>
+            </article>
+        </article>
+    </main>
+</body>
