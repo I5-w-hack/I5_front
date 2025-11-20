@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 번역</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">로고</div>
+
+    <div class="search-area">
+        <span class="notification-icon">홈</span>
+
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="검색하세요.">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+</header>
+
+
+<div class="content-wrapper">
+
+    <!-- 탭 -->
+    <div class="translation-filter">
+        <button class="filter-btn">단어</button>
+        <button class="filter-btn active">문서</button>
+    </div>
+
+    <!-- 문서 뷰어 -->
+    <div class="viewer-container">
+
+        <div class="viewer-toolbar">
+            <button class="viewer-btn" id="zoomOut">−</button>
+            <button class="viewer-btn" id="zoomIn">＋</button>
+            <span class="page-info">n / n</span>
+        </div>
+
+        <div class="document-area">
+            <div class="document-page"></div>
+        </div>
+    </div>
+
+    <!-- 오른쪽 패널 -->
+    <div class="side-panel" id="sidePanel">
+        <button class="close-btn" id="closePanel">×</button>
+
+        <div class="line-box"></div>
+        <div class="line-box"></div>
+        <div class="line-box"></div>
+        <div class="line-box"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
