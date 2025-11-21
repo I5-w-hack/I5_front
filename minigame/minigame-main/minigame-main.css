@@ -68,33 +68,29 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 30px;
-    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: #ffffff;
+    
+    
 }
 
 .search-box input {
     border: none;
-    padding: 0 8px;
-    height: 100%;
+    background: transparent;
     outline: none;
-    width: 100px;
+    padding: 5px;
+    font-size: 14px;
+    width: 200px;
 }
 
 .search-btn {
-    background: none;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center;
     border: none;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    padding: 0 5px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    color: #888;
-}
-
-.search-icon {
-    font-size: 18px;
 }
 
 /* --- 2. 주요 컨테이너 및 콘텐츠 스타일 --- */
@@ -248,4 +244,5 @@ body {
         float: none;
         justify-content: center;
     }
+
 }
