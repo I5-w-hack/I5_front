@@ -92,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     border: 1px solid #ddd;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 5px 15px;
     background-color: #ffffff;
     
@@ -369,4 +369,5 @@ body {
     .hero-img {
         display: none;
     }
+
 }
