@@ -47,23 +47,29 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    border: 1px solid #eee;
-    border-radius: 20px;
-    padding: 5px 10px;
-    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: #ffffff;
+    
+    
 }
 
-.search-input {
+.search-box input {
     border: none;
+    background: transparent;
     outline: none;
-    background-color: transparent;
+    padding: 5px;
     font-size: 14px;
-    width: 120px;
+    width: 200px;
 }
 
-.search-icon {
-    color: #aaa;
-    margin-left: 5px;
+.search-btn {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 /* --- 랭킹 제목 및 필터 라벨 --- */
@@ -196,4 +202,5 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: #333;
+
 }
