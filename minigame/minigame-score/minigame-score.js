@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let elapsedTime = 0;
     
     // setInterval로 타이머 시작
-    const timerInterval = setInterval(() => {
-        elapsedTime++;
+//     const timerInterval = setInterval(() => {
+//         elapsedTime++;
         
         // 분:초 형식으로 표시
         const minutes = Math.floor(elapsedTime / 60);
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         timerElement.textContent = formattedTime;
         
         // 진행 바 업데이트 (왼쪽에서 오른쪽으로 늘어남)
-        const progress = (elapsedTime / totalTime) * 100;
-        progressBar.style.width = `${progress}%`;
+        // const progress = (elapsedTime / totalTime) * 100;
+        // progressBar.style.width = `${progress}%`;
         
         // 시간이 다 되면 정지
         if (elapsedTime >= totalTime) {
@@ -42,8 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // 점수 업데이트 함수
-    function updateScore(newScore) {
-        const scoreElement = document.getElementById('current-score');
-        scoreElement.textContent = `${newScore}점`;
-    }
+    // function updateScore(newScore) {
+    //     const scoreElement = document.getElementById('current-score');
+    //     scoreElement.textContent = `${newScore}점`;
+    // }
 });
+
