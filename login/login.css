@@ -1,4 +1,6 @@
-* {
+
+        /* 기본 설정 */
+        * {
             box-sizing: border-box;
         }
 
@@ -19,8 +21,8 @@
         /* 좌측 상단 로고 */
         .logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 40px;
+            left: 40px;
             font-size: 32px;
             font-weight: 800;
             color: #000;
@@ -149,4 +151,4 @@
             margin-top: 5px;
             display: none; /* 기본은 숨김 */
         }
-}
+
