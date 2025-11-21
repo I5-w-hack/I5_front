@@ -92,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     border: 1px solid #ddd;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 5px 15px;
     background-color: #ffffff;
     
@@ -262,14 +262,14 @@ body {
 }
 
 .feature-card {
-    background: #ffffff;
+    background: transparent;
     border-radius: 25px;
-    padding: 50px 30px;
+    padding: 10px 10px;
     text-align: center;
     transition: transform 0.3s;
     cursor: pointer;
-    min-height: 250px;
-    min-width: 280px;
+    min-height: 200px;
+    min-width: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,7 +277,7 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.02);
 }
 
 .card-content h3 {
