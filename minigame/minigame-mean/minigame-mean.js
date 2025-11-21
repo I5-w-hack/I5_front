@@ -1,79 +1,87 @@
-// 진행률 업데이트
-let progress = 0;
-const progressFill = document.querySelector('.progress-fill');
-
-function updateProgress(value) {
-    progress = value;
-    progressFill.style.width = progress + '%';
-}
-
-// 초기 진행률 설정
-updateProgress(30);
-// 시간 바 설정
-let totalTime=161;
-let remaining=totalTime;
-const timelabel=document.getElementById('timelabel');
-const progresser=document.getElementById('progresser');
-
-const timer=setInterval(()=>{
-    if(remainingTime<=0){
-        clearInterval(timer);
-        timelabel.textContent="0:00";
-        progressBar.style.width="0%";
-        return;
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.querySelector('.close-btn');
+    const progressFill = document.querySelector('.progress-fill');
+    const optionBtns = document.querySelectorAll('.option-btn');
+    const submitBtn = document.querySelector('.submit-btn');
+    
+    // 타이머 표시용 요소를 JS에서 동적으로 추가
+    const header = document.querySelector('.header');
+    const timerEl = document.createElement('span');
+    timerEl.className = 'timer';
+    timerEl.textContent = '00:00';
+    header.appendChild(timerEl);  // header 안에 타이머 추가
+    
+    // 게임 설정
+    const totalTime = 30; // 30초
+    let elapsedTime = 0;
+    let selectedOption = null;
+    let timerId = null;
+    
+    // setTimeout을 이용한 타이머 (1초마다 반복)
+    function startTimer() {
+        timerId = setTimeout(function tick() {
+            elapsedTime++;
+            
+            // 시간 표시 업데이트
+            const minutes = Math.floor(elapsedTime / 60);
+            const seconds = elapsedTime % 60;
+            timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            // 프로그레스 바 업데이트 (왼쪽→오른쪽으로 증가)
+            const progress = (elapsedTime / totalTime) * 100;
+            progressFill.style.width = `${Math.min(progress, 100)}%`;
+            
+            // 시간 종료 체크
+            if (elapsedTime >= totalTime) {
+                alert('시간이 종료되었습니다!');
+                return;
+            }
+            
+            // 다음 1초 후 다시 실행
+            timerId = setTimeout(tick, 1000);
+        }, 1000);
     }
-    remainingTime--;
-
-    // 시간 (분,초)
-    const minutes = Math.floor(remainingTime / 60);
-    const seconds = remainingTime % 60;
-    timeLabel.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-    // 진행 업데이트
-    const progressPercentage = (remainingTime / totalTime) * 100;
-    progressBar.style.width = `${progressPercentage}%`;
-
-}, 1000);
-
-
-// 옵션 버튼 클릭 이벤트
-const optionBtns = document.querySelectorAll('.option-btn');
-let selectedOption = null;
-
-optionBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        // 이전 선택 해제
-        optionBtns.forEach(b => b.classList.remove('selected'));
-        
-        // 현재 버튼 선택
-        this.classList.add('selected');
-        selectedOption = this.dataset.option;
+    
+    // 타이머 시작
+    startTimer();
+    
+    // 옵션 버튼 클릭
+    optionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 기존 선택 제거
+            optionBtns.forEach(b => b.classList.remove('selected'));
+            // 새로운 선택
+            btn.classList.add('selected');
+            selectedOption = btn.dataset.option;
+        });
     });
-});
-
-// 다음 문제 버튼 클릭 이벤트
-const submitBtn = document.querySelector('.submit-btn');
-submitBtn.addEventListener('click', function() {
-    if (selectedOption) {
-        // 진행률 증가
-        updateProgress(progress + 25);
+    
+    // 다음 문제 버튼
+    submitBtn.addEventListener('click', () => {
+        if (!selectedOption) {
+            alert('답을 선택해주세요!');
+            return;
+        }
+        
+        // 여기에 정답 체크 로직 추가 가능
+        // 예: if (selectedOption === correctAnswer) { ... }
+        
+        alert(`${selectedOption}번을 선택했습니다!`);
         
         // 선택 초기화
-        optionBtns.forEach(btn => btn.classList.remove('selected'));
+        optionBtns.forEach(b => b.classList.remove('selected'));
         selectedOption = null;
-        
-        // 여기에 다음 문제로 이동하는 로직 추가 가능
-        console.log('다음 문제로 이동');
-    } else {
-        alert('답을 선택해주세요!');
-    }
-});
-
-// 닫기 버튼 클릭 이벤트
-const closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', function() {
-    if (confirm('퀴즈를 종료하시겠습니까?')) {
-        // 여기에 페이지 닫기 또는 이전 페이지로 이동하는 로직 추가
-        console.log('퀴즈 종료');
-    }
+    });
+    
+    // 닫기 버튼
+    closeBtn.addEventListener('click', () => {
+        clearTimeout(timerId);
+        if (confirm('퀴즈를 종료하시겠습니까?')) {
+            // 종료 로직 (페이지 이동 등)
+            window.history.back();
+        } else {
+            // 타이머 다시 시작
+            startTimer();
+        }
+    });
 });
