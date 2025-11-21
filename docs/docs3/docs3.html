@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>단어 찾기 뷰어</title>
-    <style>
-/* CSS 코드 영역 */
-    </style>
+    <link rel="stylesheet" href="docs3.css">
 </head>
 <body>
 
+<!-- 헤더 -->
 <header class="top-header">
     <span class="logo-area">
         <svg width="36" height="36" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +23,6 @@
 
     <div class="search-area">
         <span class="notification-icon">홈</span>
-
         <div class="search-box">
             <input type="text" class="search-input" placeholder="검색하세요.">
             <span class="search-icon"></span>
@@ -32,40 +30,40 @@
     </div>
 </header>
 
-<div class="content-wrapper">
-
+<div class="container">
+    <!-- 탭 필터 -->
     <div class="translation-filter">
         <button class="filter-btn">단어</button>
         <button class="filter-btn active">문서</button>
     </div>
 
-    <div class="viewer-container">
+    <!-- 뷰어 + 사이드바 -->
+    <div class="viewer-wrapper">
+        <!-- 문서 뷰어 -->
+        <div class="viewer-container">
+            <div class="viewer-toolbar">
+                <button class="viewer-btn" id="zoomOut">−</button>
+                <button class="viewer-btn" id="zoomIn">＋</button>
+                <span class="page-info">1 / 1</span>
+            </div>
 
-        <div class="viewer-toolbar">
-            <button class="viewer-btn" id="zoomOut">−</button>
-            <button class="viewer-btn" id="zoomIn">＋</button>
-            <span class="page-info">n / n</span>
+            <div class="document-area">
+                <div class="document-page" id="document-page"></div>
+            </div>
         </div>
 
-        <div class="document-area">
-            <div class="document-page" id="document-page">
-                
+        <!-- 사이드바 -->
+        <div class="sidebar hidden" id="sidebar">
+            <div class="sidebar-header">
+                선택된 단어
+                <button class="close-btn" id="closePanel">×</button>
             </div>
+            <div id="word-list"></div>
         </div>
     </div>
-
-    <div class="sidebar hidden" id="sidebar">
-        <button class="close-btn" id="closePanel">×</button>
-        
-        <div id="word-list">
-            </div>
-
-
 </div>
 
-<script>
-/* JavaScript 코드 영역 */
-</script>
+<script src="docs3.js"></script>
 </body>
 </html>
 
