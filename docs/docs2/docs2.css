@@ -23,14 +23,6 @@ body {
     margin-top: 20px; 
     margin-top: 0;
 }
-
-.logo-area svg {
-    /* 로고 크기 조정 */
-    width: 36px;
-    height: 36px;
-    display: block;
-}
-
 .search-area {
     
     display: flex;
@@ -100,10 +92,11 @@ body {
 .viewer-container {
     width: 80%;
     max-width: 900px;
-    background: white;
-    margin: 0 auto;
+    background: #ffffff;
+    margin: 0 auto 50px auto;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,       0, 0, 0.1);
 }
 
 /* 상단 툴바 */
@@ -134,18 +127,24 @@ body {
 /* 문서 영역 */
 .document-area {
     width: 100%;
-    height: 530px;
+    margin-top:14px;
+    max-height: 75vh;
+    overflow-y:auto;
     background: #eaecef;
     margin-top: 14px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding:20px 0;
 }
 
 .document-page {
-    width: 420px;
-    height: 560px;
-    background: white;
+    width: 600px;
+    min-height: 800px;
+    background: #ffffff;
     border-radius: 4px;
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    padding:30px;
+    height: auto;
+    transform-origin: top center;
+    transition: transform 0.2s ease-out;
 }
