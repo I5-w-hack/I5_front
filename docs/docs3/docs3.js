@@ -1,135 +1,81 @@
-// -------------------------- 문서 줌 기능 --------------------------
+// ========== 단어 설명 데이터베이스 ==========
+const dictionary = {
+};
+
+// ========== DOM 요소 ==========
 let scale = 1;
 const page = document.getElementById("document-page");
-
-if (document.getElementById("zoomIn")) {
-    document.getElementById("zoomIn").onclick = () => {
-        scale = Math.min(2.0, scale + 0.1); 
-        page.style.transform = `scale(${scale})`;
-    };
-}
-
-if (document.getElementById("zoomOut")) {
-    document.getElementById("zoomOut").onclick = () => {
-        scale = Math.max(0.5, scale - 0.1); 
-        page.style.transform = `scale(${scale})`;
-    };
-}
-
-// -------------------------- 사이드바 기능 --------------------------
 const sidebar = document.getElementById("sidebar");
 const wordList = document.getElementById("word-list");
 const closeBtn = document.getElementById("closePanel");
-// 초록색/회색 요소들 (번역 문장)
+const addedWords = new Set();
 
-
-// 단어 설명 데이터베이스
-const dictionary = {
-    "impact": "영향, 충격, 효과",
-    "dynamic": "역동적인, 활발한",
-    "optimize": "최적화하다, 가장 잘 활용하다",
-    "analysis": "분석, 검토",
-    "design": "설계, 디자인",
+// ========== 줌 기능 ==========
+document.getElementById("zoomIn").onclick = () => {
+    scale = Math.min(2.0, scale + 0.1);
+    page.style.transform = `scale(${scale})`;
 };
 
-/* ------------------------- 
-   본문 단어 클릭 → 사이드바 열기 및 단어 추가
-------------------------- */
+document.getElementById("zoomOut").onclick = () => {
+    scale = Math.max(0.5, scale - 0.1);
+    page.style.transform = `scale(${scale})`;
+};
+
+// ========== 텍스트 처리 함수 ==========
+// 모든 단어를 .word 클래스로 감싸기
+function processText(text) {
+    // HTML 태그는 보존하고 텍스트만 처리
+    return text.replace(/\b([a-zA-Z가-힣]+)\b/g, '<span class="word">$1</span>');
+}
+
+// 샘플 텍스트 로드
+const sampleText = ``;
+
+page.innerHTML = processText(sampleText);
+
+// ========== 본문 단어 클릭 이벤트 ==========
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("word")) {
-        const word = e.target.innerText;
-        openSidebar(word);
-        
-        // 단어를 선택하면 초록색/회색 요소들을 보이게 함
-        showTranslationBoxes(true); 
+        const word = e.target.innerText.toLowerCase();
+        if (!addedWords.has(word)) {
+            addedWords.add(word);
+            sidebar.classList.remove("hidden");
+            addWordToSidebar(word);
+        }
     }
 });
 
-/* -------------------------
-   사이드바 열기 & 단어 추가
-------------------------- */
-function openSidebar(word) {
-    if (sidebar) {
-        sidebar.classList.remove("hidden");
-        
-        setTimeout(() => {
-            sidebar.classList.add("open");
-        }, 10);
-        
-        addWordToSidebar(word);
-    }
-}
-
-/* -------------------------
-   단어 박스 생성
-------------------------- */
+// ========== 단어를 사이드바에 추가 ==========
 function addWordToSidebar(word) {
-    if (!wordList) return;
-
-    // 중복 추가 방지
-    const existingWords = Array.from(wordList.querySelectorAll('span')).map(span => span.innerText);
-    if (existingWords.includes(word)) {
-        return;
-    }
-    
+    const meaning = dictionary[word] || "뜻이 없습니다.";
     const item = document.createElement("div");
     item.className = "word-item";
 
-    const tooltipText = dictionary[word] || "설명이 없습니다.";
-
     item.innerHTML = `
-        <span>${word}</span>
-        <button class="save-btn" aria-label="단어 저장">📌</button>
-        <div class="tooltip">${tooltipText}</div>
+        <div class="word-item-header">
+            <span class="word-item-text">${word}</span>
+            <button class="save-btn">
+                <svg viewBox="0 0 24 24" width="20" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 21l-7-3-7 3V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="#4A90E2" stroke-width="2" fill="white" stroke-linejoin="round" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="word-item-meaning">${meaning}</div>
     `;
 
-    // 최신 단어가 목록 상단에 오도록 prepend 사용
     wordList.prepend(item);
-}
 
-
-
-/* -------------------------
-   저장 버튼 클릭 → localStorage 저장
-------------------------- */
-if (wordList) {
-    wordList.addEventListener("click", (e) => {
-        if (e.target.classList.contains("save-btn")) {
-            const word = e.target.parentElement.querySelector("span").innerText;
-            saveWord(word);
-        }
+    // 저장 버튼 클릭 이벤트
+    item.querySelector(".save-btn").addEventListener("click", (e) => {
+        e.target.closest('.save-btn').classList.toggle("saved");
+        alert(`"${word}"가 저장되었습니다!`);
     });
 }
 
-function saveWord(word) {
-    let saved = JSON.parse(localStorage.getItem("savedWords") || "[]");
-
-    if (!saved.includes(word)) {
-        saved.push(word);
-        localStorage.setItem("savedWords", JSON.stringify(saved));
-        alert(`"${word}"가 단어장에 저장되었습니다.`);
-    } else {
-         alert(`"${word}"는 이미 저장되어 있습니다.`);
-    }
-}
-
-/* -------------------------
-   사이드바 닫기 (X 버튼)
-------------------------- */
-if (closeBtn && sidebar) {
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-
-        // 사이드바 닫을 때 초록색/회색 요소들을 숨김
-        showTranslationBoxes(false); 
-
-        // 애니메이션이 끝난 후 완전히 숨김
-        setTimeout(() => {
-            sidebar.classList.add("hidden");
-        }, 300);
-    });
-}
-
-// 초기 상태: 초록색/회색 박스를 숨깁니다.
-showTranslationBoxes(false);
+// ========== 사이드바 닫기 ==========
+closeBtn.addEventListener("click", () => {
+    sidebar.classList.add("hidden");
+    wordList.innerHTML = "";
+    addedWords.clear();
+});
 
